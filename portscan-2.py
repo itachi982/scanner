@@ -46,12 +46,12 @@ def main():
 def scanner(host,port):
 
      try:
-        ip=socket.gethostbyname(host)
+        ip=gethostbyname(host)
      except:
         print(colored("host not found","red"))
     
      try:
-        hostname=socket.gethostbyaddr(ip)
+        hostname=gethostbyaddr(ip)
         print(colored("[+]scanning result for "+ip+" ["+hostname[0]+"]",'blue'))
         
      except:
