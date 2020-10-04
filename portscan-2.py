@@ -71,8 +71,8 @@ def conn(host,port):
          #sock.setsockopt( socket.SOL_SOCKET, socket.SO_REUSEADDR, 1 )
          #socket.setdefaulttimeout(2
          result=sock.connect((host,int(port)))
-         banner=banner(host,port).decode('utf-8')
-         print("banner")
+         #banner=banner(host,port).decode('utf-8')
+         #print("banner")
          print(colored("[+]port "+port+" is open",'green'))
          
     except:     
