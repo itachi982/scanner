@@ -5,7 +5,7 @@ import optparse
 from threading import *
 from time import *
 
-def banner(ip,port):
+def retbanner(ip,port):
    try:
       sock=socket(AF_INET,SOCK_STREAM)
       b=sock.connect((ip,int(port)))
@@ -14,7 +14,7 @@ def banner(ip,port):
    except:
       print("not")
       return
-    
+
 def ascending(port):
    #for arranging in ascending order:
     for i in range(len(port)):
@@ -71,9 +71,8 @@ def conn(host,port):
          #sock.setsockopt( socket.SOL_SOCKET, socket.SO_REUSEADDR, 1 )
          #socket.setdefaulttimeout(2
          result=sock.connect((host,int(port)))
-         #banner=banner(host,port).decode('utf-8')
-         #print("banner")
-         print(colored("[+]port "+port+" is open",'green'))
+         ban = retbanner(host,port).decode("utf-8")
+         print(colored("\n[+]port "+port+" is open"+"\t"+ban+"\n",'green'))
          
     except:     
          print(colored("[-]tcp port "+port+" is not open",'red'))
